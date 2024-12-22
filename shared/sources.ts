@@ -18,7 +18,7 @@ export const originSources = {
     home: "https://www.postcourier.com.pg/business/",
     sub: {
       share: {
-        title: "PNG商业",
+        title: "最热文章",
         column: "tech",
       },
     },
