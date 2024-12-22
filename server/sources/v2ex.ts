@@ -1,35 +1,29 @@
 interface Res {
-  version: string
-  title: string
-  description: string
-  home_page_url: string
-  feed_url: string
-  icon: string
-  favicon: string
-  items: {
-    url: string
-    date_modified?: string
-    content_html: string
-    date_published: string
-    title: string
-    id: string
-  }[]
+  data: {
+    cards: {
+      content: {
+        isTop?: boolean
+        word: string
+        rawUrl: string
+        desc?: string
+      }[]
+    }[]
+  }
 }
 
-const share = defineSource(async () => {
-  const res = await Promise.all(["create", "ideas", "programmer", "share"]
-    .map(k => myFetch(`https://www.v2ex.com/feed/${k}.json`) as Promise<Res>))
-  return res.map(k => k.items).flat().map(k => ({
-    id: k.id,
-    title: k.title,
-    extra: {
-      date: k.date_modified ?? k.date_published,
-    },
-    url: k.url,
-  })).sort((m, n) => m.extra.date < n.extra.date ? 1 : -1)
-})
+export default defineSource(async () => {
+  const rawData: string = await myFetch(`https://www.postcourier.com.pg/business/`)
+  const jsonStr = (rawData as string).match(/<!--s-data:(.*?)-->/s)
+  const data: Res = JSON.parse(jsonStr![1])
 
-export default defineSource({
-  "v2ex": share,
-  "v2ex-share": share,
+  return data.data.cards[0].content.filter(k => !k.isTop).map((k) => {
+    return {
+      id: k.rawUrl,
+      title: k.word,
+      url: k.rawUrl,
+      extra: {
+        hover: k.desc,
+      },
+    }
+  })
 })
