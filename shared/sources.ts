@@ -13,22 +13,15 @@ const Time = {
 
 export const originSources = {
   "v2ex": {
-    name: "V2EX",
+    name: "PNG news",
     color: "slate",
-    home: "https://v2ex.com/",
+    home: "https://www.postcourier.com.pg/business/",
     sub: {
       share: {
-        title: "最新分享",
+        title: "PNG商业",
         column: "tech",
       },
     },
-  },
-  "zhihu": {
-    name: "知乎",
-    type: "hottest",
-    column: "china",
-    color: "blue",
-    home: "https://www.zhihu.com",
   },
   "weibo": {
     name: "微博",
@@ -46,14 +39,6 @@ export const originSources = {
     column: "world",
     color: "red",
     home: "https://www.zaobao.com",
-  },
-  "coolapk": {
-    name: "酷安",
-    type: "hottest",
-    column: "tech",
-    color: "green",
-    title: "今日最热",
-    home: "https://coolapk.com",
   },
   "wallstreetcn": {
     name: "华尔街见闻",
@@ -102,14 +87,6 @@ export const originSources = {
     disable: true,
     home: "https://hupu.com",
   },
-  "tieba": {
-    name: "百度贴吧",
-    title: "热议",
-    column: "china",
-    type: "hottest",
-    color: "blue",
-    home: "https://tieba.baidu.com",
-  },
   "toutiao": {
     name: "今日头条",
     type: "hottest",
@@ -139,13 +116,6 @@ export const originSources = {
     // cloudflare pages cannot access
     disable: true,
     home: "https://sputniknews.cn",
-  },
-  "cankaoxiaoxi": {
-    name: "参考消息",
-    color: "red",
-    column: "world",
-    interval: Time.Common,
-    home: "https://china.cankaoxiaoxi.com",
   },
   "cls": {
     name: "财联社",
@@ -206,27 +176,6 @@ export const originSources = {
       },
     },
   },
-  "solidot": {
-    name: "Solidot",
-    color: "teal",
-    column: "tech",
-    home: "https://solidot.org",
-    interval: Time.Slow,
-  },
-  "hackernews": {
-    name: "Hacker News",
-    color: "orange",
-    column: "tech",
-    type: "hottest",
-    home: "https://news.ycombinator.com/",
-  },
-  "producthunt": {
-    name: "Product Hunt",
-    color: "red",
-    column: "tech",
-    type: "hottest",
-    home: "https://www.producthunt.com/",
-  },
   "github": {
     name: "Github",
     color: "gray",
@@ -238,27 +187,6 @@ export const originSources = {
         type: "hottest",
       },
     },
-  },
-  "bilibili": {
-    name: "哔哩哔哩",
-    color: "blue",
-    home: "https://www.bilibili.com",
-    sub: {
-      "hot-search": {
-        title: "热搜",
-        column: "china",
-        type: "hottest",
-      },
-    },
-  },
-  "kuaishou": {
-    name: "快手",
-    type: "hottest",
-    column: "china",
-    color: "orange",
-    // cloudflare pages cannot access
-    disable: true,
-    home: "https://www.kuaishou.com",
   },
   "kaopu": {
     name: "靠谱新闻",
@@ -274,13 +202,6 @@ export const originSources = {
     color: "blue",
     type: "realtime",
     home: "https://www.jin10.com",
-  },
-  "baidu": {
-    name: "百度热搜",
-    column: "china",
-    color: "blue",
-    type: "hottest",
-    home: "https://www.baidu.com",
   },
   "linuxdo": {
     name: "LINUX DO",
